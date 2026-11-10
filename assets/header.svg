@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a0b1a"/>
+      <stop offset="1" stop-color="#2b0f2a"/>
+    </linearGradient>
+    <linearGradient id="w1" x1="0" x2="1">
+      <stop offset="0" stop-color="#ff9e7a"/>
+      <stop offset=".5" stop-color="#e0529c"/>
+      <stop offset="1" stop-color="#8e3b8a"/>
+      <animate attributeName="x1" values="0;.4;0" dur="8s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="w2" x1="0" x2="1">
+      <stop offset="0" stop-color="#8e3b8a"/>
+      <stop offset="1" stop-color="#ffb38a"/>
+    </linearGradient>
+    <linearGradient id="txt" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffc9a8"/>
+      <stop offset=".5" stop-color="#ff7eb3"/>
+      <stop offset="1" stop-color="#ffc9a8"/>
+      <animate attributeName="x1" values="-1;1" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="0;2" dur="5s" repeatCount="indefinite"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .wave{animation:drift 12s ease-in-out infinite alternate}
+      .w2{animation-duration:16s;animation-direction:alternate-reverse}
+      .w3{animation-duration:20s}
+      @keyframes drift{from{transform:translateX(0)}to{transform:translateX(-300px)}}
+      .t{font-family:'Segoe UI',Poppins,Arial,sans-serif;font-weight:800}
+      .s{font-family:'Fira Code',Consolas,monospace;fill:#ffc9a8;opacity:0;animation:in 1.2s .6s forwards}
+      @keyframes in{to{opacity:.9}}
+      .dot{animation:blink 3s ease-in-out infinite}
+      @keyframes blink{50%{opacity:.15}}
+    </style>
+  </defs>
+  <rect width="1200" height="320" rx="24" fill="url(#bg)"/>
+  <g opacity=".55">
+    <path class="wave" fill="url(#w1)" opacity=".55" d="M0 230 C150 180 300 280 450 230 S750 180 900 230 S1200 280 1350 230 S1500 180 1500 230 V320 H0Z"/>
+    <path class="wave w2" fill="url(#w2)" opacity=".45" d="M0 260 C200 220 350 300 550 255 S900 220 1100 260 S1400 300 1500 255 V320 H0Z"/>
+    <path class="wave w3" fill="#e0529c" opacity=".3" d="M0 285 C180 260 380 310 600 285 S1000 260 1200 290 S1450 300 1500 285 V320 H0Z"/>
+  </g>
+  <g fill="#ffb38a">
+    <circle class="dot" cx="140" cy="70" r="2"/><circle class="dot" cx="1050" cy="60" r="2.5" style="animation-delay:1s"/>
+    <circle class="dot" cx="900" cy="120" r="1.5" style="animation-delay:2s"/><circle class="dot" cx="260" cy="140" r="1.5" style="animation-delay:.5s"/>
+  </g>
+  <text x="600" y="135" text-anchor="middle" class="t" font-size="64" fill="url(#txt)" filter="url(#glow)">Manuela Castaño</text>
+  <text x="600" y="185" text-anchor="middle" class="s" font-size="22">&lt; Frontend Developer · UX/UI Designer · Medellín /&gt;</text>
+</svg>
